@@ -29,5 +29,6 @@ int main(){
 	else{
 		std::cout<<"Punkt nie nalezy do kola";
 	}
+	std::cout<<std::endl<<"Ponizej zostana wywolane destruktory, zostana one wywolane pojedynczo co bedzie swiadczyc o tym, ze dzialalismy na oryginale, nie na kopii, nie doszlo do jej utworzenia"<<std::endl;
 	return 0;
 }

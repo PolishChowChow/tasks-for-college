@@ -6,5 +6,8 @@ public:
 		this->x = x;
 		this->y = y;
 	}
+	~Punkt(){
+		std::cout<<"destruktor dla obiektu punkt o parametrach x: "<<x<<", y:"<<y<<std::endl;
+	}
 	friend bool isPunktWKole(Punkt &punkt, Kolo &kolo);
 };
