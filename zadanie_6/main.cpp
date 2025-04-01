@@ -1,48 +1,26 @@
 #include <iostream>
 #include "include/Counter.h"
 #include "include/Choinka.h"
-// class Counter{
-//     private:
-//         static int widthCounter(int entry_rows_count){
-//             if(entry_rows_count == 3){
-//                 return 6; // edge case
-//             }
-//             if(entry_rows_count == 2){
-//                 return 4; // edge case
-//             }
-//             return Counter::widthCounter(entry_rows_count - 1) + 6;
-//         }
-//     public:
-//         static int sizeCounter(int entry_rows_count){
-//             if(entry_rows_count < 2){
-//                 std::__throw_invalid_argument("ilosc wierszy nie moze byc mniejsza od dwoch");
-//             }
-//             if(entry_rows_count == 2){
-//                 return 9; // edge case
-//             }
-//             return widthCounter(entry_rows_count) + 7;
-//         }
-// };
 
 int main() {
-    // int liczba_wierszy_w_pierwszym_bloku;
-    Choinka choinka(5,3);
-    choinka.wyswietlamy();
+    int rowsCounter;
+    do{
+        std::cout<<"Podaj liczbe wierszy(wieksza od 2): "<<std::endl;
+        std::cin>>rowsCounter;
+        if(rowsCounter <= 2){
+            std::cout<<"Nieprawidlowa liczba wierszy"<<std::endl;
+        }
+    }while(rowsCounter <= 2);
+    int rows = Counter::sizeCounter(rowsCounter);
+    int W = rowsCounter - 2;
 
-    // std::cout<<"Podaj liczbę wierszy w pierwszym bloku choinki"<<std::endl;
-    // std::cin>>liczba_wierszy_w_pierwszym_bloku;
-    // try
-    // {
-    //     std::cout<<"dla "<<liczba_wierszy_w_pierwszym_bloku<<": "<<Counter::sizeCounter(liczba_wierszy_w_pierwszym_bloku)<<std::endl;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    // std::cout<<"dla 2: "<<Counter::sizeCounter(1)<<std::endl;
-    // std::cout<<"dla 3: "<<Counter::sizeCounter(3)<<std::endl;
-    // std::cout<<"dla 4: "<<Counter::sizeCounter(4)<<std::endl;
-    // std::cout<<"dla 5: "<<Counter::sizeCounter(5)<<std::endl;
-    // std::cout<<"dla 6: "<<Counter::sizeCounter(6)<<std::endl;
+    Choinka segment1(rows, 1, rowsCounter + 1);
+    Choinka segment2(rows, 1 + W, rowsCounter + rowsCounter + 1);
+    Choinka segment3(rows, 1 + W + W, rowsCounter + rowsCounter + 1 + W);
+
+    segment1.wyswietl_plat();
+    segment2.wyswietl_plat();
+    segment3.wyswietl_plat();
+    segment2.wyswietl_stopke(rowsCounter);
     return 0;
 }
