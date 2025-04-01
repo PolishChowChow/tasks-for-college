@@ -1,5 +1,6 @@
 #include <iostream>
 #include "include/Counter.h"
+#include "include/Choinka.h"
 // class Counter{
 //     private:
 //         static int widthCounter(int entry_rows_count){
@@ -24,18 +25,20 @@
 // };
 
 int main() {
-    int liczba_wierszy_w_pierwszym_bloku;
-    std::cout<<"Podaj liczbę wierszy w pierwszym bloku choinki"<<std::endl;
-    std::cin>>liczba_wierszy_w_pierwszym_bloku;
-    try
-    {
-        std::cout<<"dla "<<liczba_wierszy_w_pierwszym_bloku<<": "<<Counter::sizeCounter(liczba_wierszy_w_pierwszym_bloku)<<std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
+    // int liczba_wierszy_w_pierwszym_bloku;
+    Choinka choinka(5,3);
+    choinka.wyswietlamy();
+
+    // std::cout<<"Podaj liczbę wierszy w pierwszym bloku choinki"<<std::endl;
+    // std::cin>>liczba_wierszy_w_pierwszym_bloku;
+    // try
+    // {
+    //     std::cout<<"dla "<<liczba_wierszy_w_pierwszym_bloku<<": "<<Counter::sizeCounter(liczba_wierszy_w_pierwszym_bloku)<<std::endl;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
     // std::cout<<"dla 2: "<<Counter::sizeCounter(1)<<std::endl;
     // std::cout<<"dla 3: "<<Counter::sizeCounter(3)<<std::endl;
     // std::cout<<"dla 4: "<<Counter::sizeCounter(4)<<std::endl;
