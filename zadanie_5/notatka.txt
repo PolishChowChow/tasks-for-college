@@ -1,0 +1,1 @@
+kompiler wyrzuca tyle błędów odnośnie złego przypisania zmiennych (brak dostępu przez  protected/private), ze pliku nie da sie skompilować.
