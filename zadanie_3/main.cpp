@@ -1,7 +1,7 @@
 #include<iostream>
 #include<math.h>
-#include "Punkt.h"
-#include "Kolo.h"
+#include "include/Punkt.h"
+#include "include/Kolo.h"
 
 bool isPunktWKole(Punkt &punkt, Kolo &kolo){
 	int odleglosc_pomiedzy_punktami = sqrt(pow(punkt.x - kolo.x, 2) * pow(punkt.y - kolo.y, 2));
